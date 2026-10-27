@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gol em Foco | Notícias de Futebol</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <a href="#" class="logo">⚽ Gol<span>em Foco</span></a>
+      <input type="search" id="busca" placeholder="Buscar notícias..." aria-label="Buscar notícias">
+    </div>
+    <nav class="menu">
+      <div class="container menu-lista" id="menu">
+        <button class="menu-item ativo" data-categoria="Todas">Todas</button>
+        <button class="menu-item" data-categoria="Brasileirão">Brasileirão</button>
+        <button class="menu-item" data-categoria="Libertadores">Libertadores</button>
+        <button class="menu-item" data-categoria="Seleção">Seleção</button>
+        <button class="menu-item" data-categoria="Mercado">Mercado da Bola</button>
+        <button class="menu-item" data-categoria="Internacional">Internacional</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container layout">
+
+    <section class="principal">
+      <article id="destaque" class="destaque"></article>
+
+      <h2 class="titulo-secao">Últimas notícias</h2>
+      <div id="grade" class="grade"></div>
+      <p id="vazio" class="vazio" hidden>Nenhuma notícia encontrada.</p>
+    </section>
+
+    <aside class="lateral">
+
+      <!-- FORMULÁRIO PARA PUBLICAR NOTÍCIA COM IMAGEM -->
+      <section class="caixa" id="publicar">
+        <h3>📸 Publicar notícia</h3>
+        <form id="form-noticia">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" maxlength="120" required placeholder="Ex.: Time vence clássico nos acréscimos">
+
+          <label for="categoria">Categoria</label>
+          <select id="categoria" required>
+            <option>Brasileirão</option>
+            <option>Libertadores</option>
+            <option>Seleção</option>
+            <option>Mercado</option>
+            <option>Internacional</option>
+          </select>
+
+          <label for="texto">Texto</label>
+          <textarea id="texto" rows="4" required placeholder="Escreva a notícia..."></textarea>
+
+          <label for="imagem">Imagens (até 3)</label>
+          <input type="file" id="imagem" accept="image/*" multiple>
+
+          <label for="imagem-url">ou adicionar por link</label>
+          <div class="linha-url">
+            <input type="url" id="imagem-url" placeholder="https://...">
+            <button type="button" id="add-url" class="botao-sec">Adicionar</button>
+          </div>
+
+          <p id="contador-img" class="contador">0 de 3 imagens</p>
+          <div id="previas" class="previas"></div>
+
+          <button type="submit" class="botao">Publicar</button>
+        </form>
+      </section>
+
+      <section class="caixa">
+        <h3>🏆 Classificação Brasileirão</h3>
+        <table class="tabela">
+          <thead><tr><th>#</th><th>Time</th><th>P</th><th>J</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Flamengo</td><td>68</td><td>32</td></tr>
+            <tr><td>2</td><td>Palmeiras</td><td>65</td><td>32</td></tr>
+            <tr><td>3</td><td>Cruzeiro</td><td>61</td><td>32</td></tr>
+            <tr><td>4</td><td>Atletico-PR</Atletico-PR></td><td>58</td><td>32</td></tr>
+            <tr><td>5</td><td>Fluminense</td><td>55</td><td>32</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="caixa">
+        <h3>📅 Próximos jogos (exemplo)</h3>
+        <ul class="jogos">
+          <li><strong>Flamengo</strong> x <strong>Palmeiras</strong><span>Sáb 16h</span></li>
+          <li><strong>Vasco</strong> x <strong>Bahia</strong><span>Dom 18h30</span></li>
+          <li><strong>Cruzeiro</strong> x <strong>Internacional</strong><span>Dom 20h</span></li>
+        </ul>
+      </section>
+    </aside>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">© 2026 Gol em Foco — Site de exemplo para estudo.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
